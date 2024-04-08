@@ -1,0 +1,22 @@
+.background{
+     background-image: url('../../public/background_img.jpg');
+     background-size: 100% auto; 
+     background-position: center; 
+     width: 98.9vw;
+     height: 120vh; 
+}
+.text {
+     position: absolute;
+     top: 63%;
+     left: 52%;
+     transform: translate(-50%, -50%);
+     color: rgba(185, 114, 66, 0.796);
+     font-size: 19rem;
+     font-family: "Libre Bodoni", serif;
+     letter-spacing: 10vw;
+     text-align:center;
+     transition:top 1s ease ;
+}
+.scrolled{
+     top:0%;
+}
