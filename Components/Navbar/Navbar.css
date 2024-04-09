@@ -15,8 +15,31 @@
      font-family: "Libre Bodoni", serif;
      letter-spacing: 10vw;
      text-align:center;
-     transition:top 1s ease ;
-}
-.scrolled{
-     top:0%;
-}
+     /* transition:top 1s ease ; */
+} 
+
+.hideText{
+     /* top:0%; */
+     animation: himanshu 2s ease forwards;
+     z-index: 2;
+ }
+
+ @keyframes himanshu {
+     0%{
+          top: 63%;
+          transform: translate(-50%, -50%);
+          font-size: 19rem;
+          letter-spacing: 10vw;
+          position: fixed;
+     }
+     100%{
+          top:0%;
+          left: 48%;
+          position: fixed;
+          transform: translate(-50%, 0%);
+          letter-spacing: 0.2vw;
+          text-align:center;
+          font-size: 310%;
+          color: white;
+     }
+ }
