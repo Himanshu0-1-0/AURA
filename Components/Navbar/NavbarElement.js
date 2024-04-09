@@ -1,10 +1,10 @@
 import "./NavbarElement.css"
-export default function NavbarElement() {
+export default function NavbarElement({Show}) {
   return (
-         <nav className="navbar navbar-expand-lg  fixed-top" id="nav">
+         <nav className={(Show)? " navbar navbar-expand-lg  fixed-top showNav":"navbar navbar-expand-lg  fixed-top" }  id="nav">
         <div className="container-fluid">
         <a className="nav-link text-nav" href="#" id="home">Home</a>
-        <a className="navbar-brand " id="logo" href="#">Aura</a>
+        {/* <a className={(Show)?" navbar-brand showLogo":"navbar-brand "} id="logo" href="#">Aura</a> */}
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
             <li className="nav-item">

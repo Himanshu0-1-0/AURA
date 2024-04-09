@@ -23,7 +23,15 @@ export default function Navbar() {
   return (
     <>
     <div className="background">
-      {(showNavbar===false)?<div className="text" id="text">Aura</div>: <NavbarElement />}
+      
+
+      {(showNavbar===false)?<>
+        <NavbarElement Show={false}/>
+        <div className="text" id="text">Aura</div>
+      </>: <>
+        <NavbarElement Show={true} />
+        <div className="text hideText" id="text">Aura</div>
+      </>}
     </div>
     </>
   )
