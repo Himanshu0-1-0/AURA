@@ -1,0 +1,25 @@
+#navbarSupportedContent{
+    margin-left: 25%;
+}
+
+#logo{
+    margin-left: 42%;
+    transform: translate(-50%, 0%);
+    color: white;
+    font-family: "Libre Bodoni", serif;
+    font-size: 300%;
+}
+#home{
+    margin-left: 3%;
+}
+
+#nav{
+    padding: 0% 0%;
+    background-color:  rgba(185, 114, 66, 0.934);
+}
+
+.text-nav{
+    color: white;
+    font-family: "Libre Bodoni", serif;
+    font-size: 110%;
+}
