@@ -1,14 +1,38 @@
 .card {
     background-color: #f0f0f0;
-    border: 1px solid #ccc;
     height: 80vh; 
     width: 30vw;
     overflow: hidden;
     
     border: 5px solid rgba(21, 31, 80, 0.963);
+    border-radius: 9px;
   }
 
   img{
     width: 30vw;
     height: 80vh;
   }
+  
+  .butn {
+    font-family: "Libre Bodoni", serif;
+    background-color: rgba(21, 31, 80, 0.963); 
+    color: white;
+    padding: 2% 2%; 
+    border: 6px double white; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    width: 90%;
+    margin: 5% 2.5%;
+  }
+  
+  .butn:hover {
+    background-color:white ;  
+    color: rgba(21, 31, 80, 0.963);
+    border: 6px double rgba(21, 31, 80, 0.963); 
+    border-radius: 5px;
+  }
+  

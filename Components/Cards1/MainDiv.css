@@ -1,8 +1,7 @@
 .card-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 2 columns */
-    gap: 1.2%; /* Gap between cards */
-    margin-top: 2% ; /* Center the grid horizontally */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1.2%; 
+    margin-top: 2% ;
     margin-left: 1.7%;
-    /* max-width: 800px; Set maximum width */
   }
