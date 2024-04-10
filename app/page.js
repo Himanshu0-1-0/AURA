@@ -4,6 +4,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      <div className={styles.test}>Hello</div>
     </>
   );
 }

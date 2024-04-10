@@ -1,11 +1,11 @@
 #navbarSupportedContent{
-    margin-left: 25%;
+    margin-left: 75%;
 }
 
 #logo{
     margin-left: 42%;
     transform: translate(-50%, 0%);
-    color: white;
+    color: rgba(255, 255, 255, 0);
     font-family: "Libre Bodoni", serif;
     font-size: 300%;
 }
@@ -14,12 +14,32 @@
 }
 
 #nav{
-    padding: 0% 0%;
-    background-color:  rgba(185, 114, 66, 0.934);
+    padding: 1% 0%;
+    /* background-color:  rgba(185, 114, 66, 0.934); */
+    background-color:  rgba(185, 114, 66, 0.007);
+    z-index: 0;
+    transition: background-color 1s ease;
 }
 
 .text-nav{
     color: white;
     font-family: "Libre Bodoni", serif;
     font-size: 110%;
+}
+
+.showNav{
+    background-color:  rgba(21, 31, 80, 0.963) !important;
+}
+.showLogo{
+    color: white !important;
+}
+
+.MakeBlue{
+    color: rgba(21, 31, 80, 0.963) !important;
+    font-size: 1.3rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+
+}
+.Hide{
+    visibility: hidden;
 }

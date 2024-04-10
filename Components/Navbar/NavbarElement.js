@@ -1,20 +1,19 @@
 import "./NavbarElement.css"
-export default function NavbarElement() {
+export default function NavbarElement({Show}) {
   return (
-         <nav className="navbar navbar-expand-lg  fixed-top" id="nav">
+         <nav className={(Show)? " navbar navbar-expand-lg  fixed-top showNav":"navbar navbar-expand-lg  fixed-top" }  id="nav">
         <div className="container-fluid">
-        <a className="nav-link text-nav" href="#" id="home">Home</a>
-        <a className="navbar-brand " id="logo" href="#">Aura</a>
+        <a className={Show ?"nav-link text-nav " :"nav-link text-nav MakeBlue Hide" } href="#" id="home">Home</a>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
             <li className="nav-item">
-                <a className="nav-link  text-nav" aria-current="page" href="#">Fashion</a>
+                <a className={Show ?"nav-link text-nav " :"nav-link text-nav MakeBlue" } aria-current="page" href="#">Profile</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link text-nav" href="#">Accessories</a>
+                <a className={Show ?"nav-link text-nav " :"nav-link text-nav MakeBlue" } href="#">About Us</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link text-nav" href="#">Footwear</a>
+                <a className={Show ?"nav-link text-nav " :"nav-link text-nav MakeBlue" } href="#">Support</a>
             </li>
             </ul>
         </div>
