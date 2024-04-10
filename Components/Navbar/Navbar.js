@@ -14,7 +14,7 @@ export default function Navbar() {
       }
     }
 
-    const handleScroll2 = () => {
+    function handleScroll2 () {
       const btn = document.getElementById('btn1');
       const btnRect = btn.getBoundingClientRect();
       const parentRect = btn.parentElement.getBoundingClientRect();

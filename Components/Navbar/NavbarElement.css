@@ -17,8 +17,9 @@
     padding: 1% 0%;
     /* background-color:  rgba(185, 114, 66, 0.934); */
     background-color:  rgba(185, 114, 66, 0.007);
-    z-index: 0;
+    z-index: 500;
     transition: background-color 1s ease;
+
 }
 
 .text-nav{

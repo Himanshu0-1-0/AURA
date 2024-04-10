@@ -16,13 +16,14 @@
      font-family: "Libre Bodoni", serif;
      letter-spacing: 3.5vw;
      text-align:center;
+     z-index: 1000;
      /* transition:top 1s ease ; */
 } 
 
 .hideText{
      /* top:0%; */
      animation: himanshu 1s ease forwards;
-     z-index: 2;
+     z-index: 1000;
  }
  .showText{
      animation: himanshu2 1s ease forwards;
