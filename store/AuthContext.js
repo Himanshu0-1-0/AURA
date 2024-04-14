@@ -1,19 +1,24 @@
 'use client'
-// /contexts/AuthContext.js
-
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  useEffect(() => {
+    const loggedIn = localStorage.getItem('isLoggedIn');
+    setIsLoggedIn(loggedIn === 'true');
+  }, []);
+
   const login = () => {
     setIsLoggedIn(true);
+    localStorage.setItem('isLoggedIn', 'true');
   };
 
   const logout = () => {
     setIsLoggedIn(false);
+    localStorage.removeItem('isLoggedIn');
   };
 
   return (
@@ -24,8 +29,6 @@ export const AuthProvider = ({ children }) => {
 };
 
 export const useAuth = () => useContext(AuthContext);
-
-
 
 // to use 
 

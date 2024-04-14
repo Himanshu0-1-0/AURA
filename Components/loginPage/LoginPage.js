@@ -1,7 +1,12 @@
 'use client'
 import "./LoginPage.css"
-
+import { useAuth } from "@/store/AuthContext";
+import Link from "next/link";
 export default function LoginPage() {
+   const {isLoggedIn,login} =useAuth();
+   function handleLogin(){
+      login();
+   }
   return (
     <>
      <div className="sidenav">
@@ -22,7 +27,7 @@ export default function LoginPage() {
                      <label>Password</label>
                      <input type="password" className="form-control" placeholder="Password"/>
                   </div>
-                  <button type="button" className="btn btn-black">Login</button>
+                 <Link href="/"> <button type="button" className="btn btn-black" onClick={handleLogin}>Login</button></Link>
                   <button type="button" className="btn btn-secondary register">Register</button>
                </form>
             </div>
