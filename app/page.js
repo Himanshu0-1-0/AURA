@@ -17,6 +17,7 @@ export default function Home() {
       <Swiper />
       <Footer/>
       {/* <div className={styles.test}></div> */}
+
     </AuthProvider>
   );
 }

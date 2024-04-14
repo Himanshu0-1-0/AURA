@@ -1,0 +1,128 @@
+#products {
+    margin-top: 15rem;
+    position: relative;
+    width: 100%;
+  }
+  
+  .producat_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14rem;
+    width: 90%;
+  }
+  .producat_image img {
+    display: block;
+    object-fit: cover;
+    width: 90%;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  .img_small {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    width: 90%;
+    margin-left: auto;
+  }
+  .img_small img {
+    object-fit: cover;
+    width: 22%;
+  }
+  .img_small img.active {
+    border: 2px solid var(--Orange);
+    opacity: 0.3;
+  }
+  .company_txt {
+    color: var(--Orange);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+  }
+  .producat_content {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .producat_content h2 {
+    font-size: 4rem;
+    margin: 1rem 0;
+    width: 60%;
+  }
+  .producat_des {
+    margin: 2rem 0;
+    width: 65%;
+    font-size: 1.5rem;
+    line-height: 1.56;
+    color: var(--Darkgrayish);
+  }
+  .dicscount_price {
+    display: flex;
+    align-items: center;
+  }
+  .normal_price {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  .dicscount_price span {
+    font-weight: normal;
+    font-size: 1.5rem;
+    background-color: #ffeee2;
+    padding: 0 0.5rem;
+    color: var(--Orange);
+    font-weight: 700;
+    margin-left: 1rem;
+  }
+  .total_price {
+    text-decoration: line-through;
+    color: var(--Grayish);
+    margin: 1rem 0;
+  }
+  .qty {
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btns button {
+    outline: none;
+    border: none;
+    background-color: var(--Lightgrayish);
+    color: var(--Orange);
+    padding: 0.7rem 1.2rem;
+    font-size: 2rem;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .btns button:active {
+    transform: scale(0.98);
+  }
+  .btns .qty_numbers {
+    color: var(--Darkgrayish);
+    font-weight: 600;
+  }
+  .add_cart {
+    outline: none;
+    border: none;
+    background-color: var(--Orange);
+    font-family: inherit;
+    color: var(--White);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 6rem;
+    border-radius: 5px;
+    margin-left: 4rem;
+    cursor: pointer;
+  }
+  .add_cart:active {
+    transform: scale(0.98);
+  }
+  .add_cart svg {
+    margin-right: 1rem;
+  }
