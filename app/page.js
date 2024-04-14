@@ -10,7 +10,7 @@ export default function Home() {
       <MainDiv/>
       <Swiper />
       <Footer/>
-      <div className={styles.test}></div>
+      {/* <div className={styles.test}></div> */}
     </>
   );
 }

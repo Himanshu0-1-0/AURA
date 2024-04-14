@@ -36,13 +36,13 @@
 
 .right{
     align-items: center;
-    text-align: end;
+    text-align: flex-end;
     justify-content: space-between;
     flex-wrap: wrap;
     padding:2rem;
 }
 
-/* .friends{
+/* .friflex-flex-ends{
 
 } */
 
@@ -81,7 +81,7 @@
 
 .right-icons{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .social-icon {
