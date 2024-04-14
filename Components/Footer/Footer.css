@@ -1,0 +1,95 @@
+.footer{
+    padding: 4rem 6rem;
+    background: rgba(21, 31, 80, 0.963);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left{
+    /* padding-left: rem; */
+    text-align: start;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* margin-left: 0.2rem; */
+}
+
+.left div{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.left h4{
+    font-size: 1.5rem;
+    padding: 1rem 0 .8rem 0;
+
+}
+
+.left a{
+    text-decoration: none;
+    color: white;
+    padding-bottom: 0.4rem;
+    font-size: 1.1rem;
+}
+
+.right{
+    align-items: center;
+    text-align: end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding:2rem;
+}
+
+/* .friends{
+
+} */
+
+.email-box{
+    margin: 2rem 0rem;
+}
+
+.footer-email{
+    width:250px;
+    height: 40px;
+    outline: none;
+    border: none;
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+.footer-email::placeholder{
+    color: grey;
+}
+
+.footer-btn{
+    width:100px;
+    height:40px;
+    background-color:rgb(92, 91, 91);
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.footer-btn:hover{
+    cursor: pointer;
+    background-color: blue;
+    transition: all 0.4s ease-out;
+}
+
+.right-icons{
+    display: flex;
+    justify-content: end;
+}
+
+.social-icon {
+    margin: 0px 10px;
+    color: rgb(232, 232, 237) !important;
+    font-size:2rem;
+}
+
+.social-icon:hover{
+    color:rgb(247, 81, 172) !important;
+}
