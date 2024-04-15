@@ -9,16 +9,16 @@ export default function ProductPage() {
         <div className="producat_wrapper">
           <div className="producat_image">
             <div className="img_thumbnail">
-              <img src="/Card1-Images/fashion/test.jpg" width="300px" height="550px" alt="i am img" />
+              <img src="/Card1-Images/fashion/test.png" width="300px" height="550px" alt="i am img" />
               <div className="img_small">
                 <img
-                  src="/Card1-Images/fashion/test.jpg"
+                  src="Card1-Images/fashion/test.png"
                   alt=""
                   className="active"
                 />
-                <img src="/Card1-Images/fashion/test.jpg" alt="" />
-                <img src="/Card1-Images/fashion/test.jpg" alt="" />
-                <img src="/Card1-Images/fashion/test.jpg" alt="" />
+                <img src="/Card1-Images/fashion/test.png" alt="" />
+                <img src="/Card1-Images/fashion/test.png" alt="" />
+                <img src="/Card1-Images/fashion/test.png" alt="" />
               </div>
             </div>
           </div>

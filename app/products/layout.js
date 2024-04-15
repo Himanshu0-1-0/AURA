@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import NavbarShow from "@/Components/product-page/NavbarShow.js";
@@ -13,6 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+
       <body className={inter.className}>
         	<NavbarShow />
             {children}
