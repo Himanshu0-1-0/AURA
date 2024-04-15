@@ -1,9 +1,10 @@
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors');
 
 const app = express();
 const port = 5173;
-
+app.use(cors());
 const options = {
   method: 'GET',
   url: 'https://real-time-amazon-data.p.rapidapi.com/search',
@@ -22,7 +23,11 @@ const options = {
 app.get('/getData', async (req, res) => {
   try {
     const response = await axios.request(options);
-    const products = response.data.data.products.map(x => x.product_title);
+    const products = response.data.data.products.map(x => ({
+      title: x.product_title,
+      photo: x.product_photo,
+      price: x.product_price
+    }));
     res.json(products);
   } catch (error) {
     console.error(error);

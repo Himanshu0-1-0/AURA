@@ -6,6 +6,7 @@
     
     border: 5px solid rgba(21, 31, 80, 0.963);
     border-radius: 9px;
+    position: relative;
   }
 
   img{
@@ -15,24 +16,26 @@
   
   .butn {
     font-family: "Libre Bodoni", serif;
-    background-color: rgba(21, 31, 80, 0.963); 
-    color: white;
+    background-color: white;
+    color: rgba(21, 31, 80, 0.963); 
     padding: 2% 2%; 
-    border: 6px double white; 
+    /* border: 6px double rgba(21, 31, 80, 0.963);   */
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
     transition: background-color 0.3s ease;
-    width: 90%;
-    margin: 5% 2.5%;
+    width: 50%;
+    margin-top: 115%;
+    margin-left: 25%;
+    position: absolute;
   }
   
   .butn:hover {
-    background-color:white ;  
-    color: rgba(21, 31, 80, 0.963);
-    border: 6px double rgba(21, 31, 80, 0.963); 
+    background-color:rgba(21, 31, 80, 0.963); 
+    color: white;
+    border: 6px double  white;
     border-radius: 5px;
   }
   
