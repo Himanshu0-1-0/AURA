@@ -1,12 +1,12 @@
 import React from 'react'
 import "./NavbarShow.css"
-
+import Link from 'next/link'
 export default function NavbarShow() {
     return (
       <>
        <nav className= " navbar navbar-expand-lg  fixed-top showNav" id="nav">
         <div className="container-fluid">
-        <a className="nav-link text-nav " href="#" id="home">Home</a>
+        <Link className="nav-link text-nav " href="/" id="home">Home</Link>
         <div className='logo-aura'>
                 AURA
         </div>

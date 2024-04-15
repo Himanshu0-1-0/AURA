@@ -9,7 +9,7 @@ const options = {
   method: 'GET',
   url: 'https://real-time-amazon-data.p.rapidapi.com/search',
   params: {
-    query: 'Clothes',
+    query: 'caps',
     page: '1',
     country: 'US',
     category_id: 'aps'

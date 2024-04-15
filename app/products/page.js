@@ -15,21 +15,7 @@ export default function Page(){
     return (
         <>
             <div className = "body">
-                {/* <h1 className="heading"> We got you!</h1> */}
-                {/* <Card img = "trial.jpg" des = "i m just girl" price ="450" rating = "5"/>
-                <Card img = "trial.jpg" des = "i m just girl" price ="450" rating = "5"/>
-                <Card img = "trial.jpg" des = "i m just girl" price ="450" rating = "5"/>
-                <Card img = "trial.jpg" des = "i m just girl" price ="450" rating = "5"/>
-                <Card img = "trial.jpg" des = "i m just girl" price ="450" rating = "5"/>
-                <Card img = "trial.jpg" des = "i m just girl" price ="450" rating = "5"/>
-                <Card img = "trial.jpg" des = "i m just girl" price ="450" rating = "5"/>
-                <Card img = "trial.jpg" des = "i m just girl" price ="450" rating = "5"/>
-                <Card img = "trial.jpg" des = "i m just girl" price ="450" rating = "5"/>
-                <Card img = "trial.jpg" des = "i m just girl" price ="450" rating = "5"/>
-                <Card img = "trial.jpg" des = "i m just girl" price ="450" rating = "5"/>
-                <Card img = "trial.jpg" des = "i m just girl" price ="450" rating = "5"/> */}
-
-                {data.map(x=><Card img = {x.photo} des = {x.title} price ={x.price} rating = "5"/>)}
+                {data.map(x=><Card img = {x.photo} des = {x.title} price ={x.price} rating = "5" key={x.title}/>)}
             </div>
         </>
     )
