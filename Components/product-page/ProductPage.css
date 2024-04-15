@@ -1,9 +1,14 @@
 #products {
-    margin-top: 15rem;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
     position: relative;
     width: 100%;
   }
-  
+
+  /* .container{
+    width:40rem;
+  }
+   */
   .producat_wrapper {
     display: flex;
     justify-content: space-between;
@@ -29,10 +34,15 @@
   .img_small img {
     object-fit: cover;
     width: 22%;
+   
   }
   .img_small img.active {
-    border: 2px solid var(--Orange);
+    border: 2px solid Orange;
     opacity: 0.3;
+   
+  }
+  .img_small img:hover{
+    transform: scale(0.98);
   }
   .company_txt {
     color: var(--Orange);
@@ -42,8 +52,13 @@
     font-size: 1.2rem;
   }
   .producat_content {
-    width: 100%;
+    width: 200%;
     margin: 0 auto;
+  }
+
+  .product-content{
+    
+
   }
   .producat_content h2 {
     font-size: 4rem;
@@ -52,7 +67,7 @@
   }
   .producat_des {
     margin: 2rem 0;
-    width: 65%;
+    width: 100%;
     font-size: 1.5rem;
     line-height: 1.56;
     color: var(--Darkgrayish);
@@ -84,7 +99,7 @@
     align-items: center;
     margin-top: 3rem;
   }
-  .btn {
+  .btns {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,17 +124,27 @@
   .add_cart {
     outline: none;
     border: none;
-    background-color: var(--Orange);
+    background-color: Orange;
     font-family: inherit;
-    color: var(--White);
+    color: White;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 6rem;
+    padding: 1rem 3rem;
     border-radius: 5px;
     margin-left: 4rem;
     cursor: pointer;
+    width: 95%;
+    white-space: nowrap; /* Prevent text from wrapping */
   }
+  
+  .add_cart p {
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Hide any overflow */
+    text-overflow: ellipsis; /* Display ellipsis (...) for overflow */
+    flex: 1; /* Allow the text to take up remaining space */
+  }
+  
   .add_cart:active {
     transform: scale(0.98);
   }
