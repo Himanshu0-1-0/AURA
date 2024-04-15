@@ -1,0 +1,11 @@
+.body {
+    /* background: linear-gradient(to right, #0000FF, #87CEFA); */
+    height: auto; 
+    margin: 0; /* Remove default margin */
+}
+
+.heading{
+    margin-top: 8%;
+    margin-left: 40%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

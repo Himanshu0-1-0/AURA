@@ -1,0 +1,84 @@
+.card-container{
+    background-color:antiquewhite;
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Smooth transition */
+    /* margin-left: 4%; */
+    margin-top: 8%;
+    margin-left: 5.5%;
+    border-radius: 3px;
+   
+}
+
+.card-container:hover {
+    transform: scale(1.05) translate(-5px, -5px);
+    /* Adjust the box-shadow for more prominence on hover */
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Card styles */
+
+
+.card-image > img{
+    height :35vh ;
+    width : 17vw; 
+}
+
+.info-container{
+    display : flex;
+    justify-content: space-around;
+    margin-top: 3% ; 
+}
+
+.about {
+    color: #222;
+    font-family: inherit;
+    font-size: 0.7 rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+    margin-top: 1%;
+}
+
+.rating{
+    /* margin-top: 3%;
+    margin-right: 3%; */
+    display: flex;
+    justify-content: flex-end;
+    gap : 2px ; 
+    color: #222;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.rating img{
+    margin-top: 11%;
+    height : 15px; 
+    width : 15px ; 
+}
+
+.rating span{
+    margin-top: 2%;
+    margin-left: 1%;
+    margin-right: 2%;
+    color: black;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: bold;
+    font-weight: 500;
+}
+
+.pricing{
+    color: #222;
+    font-family: inherit;
+    font-size: px;
+    font-style: normal;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 13%;
+}
