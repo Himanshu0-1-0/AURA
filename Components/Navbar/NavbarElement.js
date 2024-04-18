@@ -18,7 +18,7 @@ export default function NavbarElement({Show}) {
                 :<Link className={Show ?"nav-link text-nav " :"nav-link text-nav MakeBlue" } aria-current="page" href="/login">Login</Link>}
             </li>
             <li className="nav-item">
-                <a className={Show ?"nav-link text-nav " :"nav-link text-nav MakeBlue" } href="#">About Us</a>
+                <Link className={Show ?"nav-link text-nav " :"nav-link text-nav MakeBlue" } href="/aboutus">About Us</Link>
             </li>
             <li className="nav-item">
                 <a className={Show ?"nav-link text-nav " :"nav-link text-nav MakeBlue" } href="#">Support</a>
