@@ -15,7 +15,7 @@ export default function NavbarElement({Show}) {
             <li className="nav-item">
                 {isLoggedIn?
                 <button className={Show ?"nav-link text-nav " :"nav-link text-nav MakeBlue" } onClick={handleLogout}>Logout</button>
-                :<Link className={Show ?"nav-link text-nav " :"nav-link text-nav MakeBlue" } aria-current="page" href="/login">Login</Link>}
+                :<Link className={Show ?"nav-link text-nav " :"nav-link text-nav MakeBlue" } aria-current="page" href="/login?state=login">Login</Link>}
             </li>
             <li className="nav-item">
                 <Link className={Show ?"nav-link text-nav " :"nav-link text-nav MakeBlue" } href="/aboutus">About Us</Link>

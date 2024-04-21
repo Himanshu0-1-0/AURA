@@ -50,21 +50,28 @@ body {
     }
 
     .login-form{
-        margin-top: 40%;
+        margin-top: 27%;
         margin-left: 40%;
     }
 
+    .form-group{
+        margin: 5%;
+    }
+    .form-group input{
+        width: 170%;
+    }
+ 
     .register-form{
         margin-top: 20%;
     }
 }
 
 
-.login-main-text{ 
+.login-main-text{
     margin-left: 17%;
     margin-top: 25%;
     padding: 60px;
-    color: #fff;
+    color: #fff; 
 }
 
 .login-main-text h2{
@@ -74,7 +81,8 @@ body {
 .btn-black{
     background-color: rgba(21, 31, 80, 0.963) !important;
     margin-top: 3%;
-    margin-right: 2%;
+    /* margin-right: 2%; */
+    margin-left:10%;
     color: #fff;
 }
 
