@@ -9,7 +9,6 @@ import emailjs from '@emailjs/browser';
 // import { BiFacebook, BiInstagram } from 'bootstrap-icons-react';
 
 export default function Footer() {
-
     const form = useRef();
 
     const sendEmail = (e) => {
