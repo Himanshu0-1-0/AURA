@@ -17,10 +17,22 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 
+.card-image{
+  width: 260px;
+  height: 260px;
+  position: relative;
+  overflow: hidden;
+  margin-left:70px;
+
+}
 
 .card-image img{
-    height :35vh ;
-    width : 300px; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .info-container{

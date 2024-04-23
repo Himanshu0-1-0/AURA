@@ -1,18 +1,23 @@
 'use client'
 import {useState,useEffect,useRef} from "react"
+import { useSearchParams } from 'next/navigation'
 import axios from 'axios';
 import Card from "@/Components/ProductCard/ProductCard.js"
 import "./styles.css"
 export default function Page(){
+    const searchParams = useSearchParams();
     const[data,setData]= useState([]);
     const searchInputRef = useRef(null);
-    async function handleSearch(){ 
+    function handleSearch(){ 
         const query = searchInputRef.current.value;
         if (!query) {
         alert('Please enter a search query');
         return;
         }
+        handleBackendRequest(query);
+    }
 
+    async function handleBackendRequest(query){
         try {
             const response = await fetch(`http://localhost:5173/getData?query=${encodeURIComponent(query)}`);
             if (!response.ok) {
@@ -26,6 +31,13 @@ export default function Page(){
             alert('An error occurred while fetching data');
         }
     }
+    useEffect(()=>{
+        const state2 = searchParams.get('path');
+        if(state2){
+            handleBackendRequest(state2);
+        }
+    },[])
+    
     // useEffect(()=>{
     //     fetch('http://localhost:5173/getData')
     //     .then(response => response.json())

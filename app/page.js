@@ -13,8 +13,9 @@ export default function Home() {
   return (
     <AuthProvider>
       <Navbar />
-      <Swiper />
       <MainDiv/>
+      <Swiper />
+      
       <Footer/>
       {/* <div className={styles.test}></div> */}
 

@@ -41,6 +41,10 @@ export default function Navbar() {
       window.removeEventListener('scroll', handleScroll2);
     };
   }, []);
+
+  function pooja(){
+    window.scrollTo(0,1065);
+  }
   
   return (
     <>
@@ -55,7 +59,7 @@ export default function Navbar() {
         <div className="text hideText" id="text">Aura</div>
       </>}
       {/* <Btn /> */}
-      <button className={isFixed?"btn1":"btn2"} id="btn1">Explore Our Collection</button>
+      <button className={isFixed?"btn1":"btn2"} id="btn1" onClick={pooja}>Explore Our Collection</button>
     </div>
     </>
   )

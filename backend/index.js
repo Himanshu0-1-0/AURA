@@ -20,7 +20,7 @@ const options = {
     category_id: 'aps'
   },
   headers: {
-    'X-RapidAPI-Key': '2f76fd13a7msh80786801691a844p1e39edjsn3a0dd421bdb0',
+    'X-RapidAPI-Key': 'cbd8d112d5msh4367eaa12000e49p1b629cjsn05a9e3ff3bb6',
     'X-RapidAPI-Host': 'real-time-amazon-data.p.rapidapi.com'
   }
 };
