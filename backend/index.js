@@ -61,7 +61,7 @@ app.post('/loginCheck', async (req, res) => {
     if (!isPasswordValid) {
       return res.status(401).json({ error: 'Invalid email or password' });
     }
-    res.status(200).json({msg: "Registration Succesful" });
+    res.status(200).json({ msg: 'Login successful', email });
   } catch (error) {
     console.error('Error:', error);
     res.status(500).json({ error: 'Internal server error' });
@@ -83,7 +83,7 @@ app.post('/register', async (req, res) => {
     // Create a new user record
     const newUser = new model({ name, email, contact, password });
     await newUser.save();
-    res.status(201).json({ msg: "User registered successfully" });
+    res.status(201).json({ msg: 'User registered successfully', email });
   } catch (error) {
     console.error('Error:', error);
     res.status(500).json({ error: 'Internal server error' });

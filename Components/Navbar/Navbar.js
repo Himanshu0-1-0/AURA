@@ -42,7 +42,7 @@ export default function Navbar() {
     };
   }, []);
 
-  function pooja(){
+  async function pooja(){
     window.scrollTo(0,1065);
   }
   

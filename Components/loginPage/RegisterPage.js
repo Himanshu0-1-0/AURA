@@ -34,8 +34,9 @@ export default function LoginPage() {
         const data = await response.json();
         if (response.ok) {
           // Registration successful, you can redirect or perform any other action here
-          login();
-          console.log(data.msg);
+          const { email } = data; // Extract email from the response
+          login(email); // Pass the email to the login function
+         //  console.log(data.email);
           router.push("/");
 
         } else {

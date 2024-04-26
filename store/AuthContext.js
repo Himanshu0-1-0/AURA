@@ -1,55 +1,37 @@
-'use client'
 import React, { createContext, useState, useEffect, useContext } from 'react';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [email, setEmail] = useState('');
 
   useEffect(() => {
     const loggedIn = localStorage.getItem('isLoggedIn');
+    const userEmail = localStorage.getItem('userEmail');
     setIsLoggedIn(loggedIn === 'true');
+    setEmail(userEmail || '');
   }, []);
 
-  const login = () => {
+  const login = (email) => {
     setIsLoggedIn(true);
+    setEmail(email);
     localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('userEmail', email);
   };
 
   const logout = () => {
     setIsLoggedIn(false);
+    setEmail('');
     localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('userEmail');
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
+    <AuthContext.Provider value={{ isLoggedIn, login, logout, email }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
 export const useAuth = () => useContext(AuthContext);
-
-// to use 
-
-// ExampleComponent.js
-/*
-import React from 'react';
-import { useAuth } from '../contexts/AuthContext';
-
-const ExampleComponent = () => {
-  const { isLoggedIn, login, logout } = useAuth();
-
-  return (
-    <div>
-      {isLoggedIn ? (
-        <button onClick={logout}>Logout</button>
-      ) : (
-        <button onClick={login}>Login</button>
-      )}
-    </div>
-  );
-};
-
-export default ExampleComponent;
-*/

@@ -1,7 +1,8 @@
 'use client'
 import {useState,useEffect,useRef} from "react"
 import { useSearchParams } from 'next/navigation'
-import axios from 'axios';
+import NavbarShow from "@/Components/product-page/NavbarShow.js";
+
 import Card from "@/Components/ProductCard/ProductCard.js"
 import "./styles.css"
 export default function Page(){
@@ -48,6 +49,7 @@ export default function Page(){
     // },[])
     return (
         <> 
+        	<NavbarShow />
             <div className="search">
              <input type="text" ref={searchInputRef}  />
              <button onClick={handleSearch}>Search</button>

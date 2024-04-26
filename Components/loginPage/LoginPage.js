@@ -6,7 +6,7 @@ import { useRef ,useState,useEffect} from 'react';
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
 export default function LoginPage() {
-   const {isLoggedIn,login} =useAuth();
+   const {login} =useAuth();
 
    // error
    const [error, setError] = useState({vis:false,msg:""});
@@ -29,7 +29,9 @@ export default function LoginPage() {
          });
          const data = await response.json();
          if (response.ok) {
-           login(); // Update frontend state if authentication is successful
+            const { email } = data; 
+            login(email); 
+            // console.log(email)
            router.push("/");
          } else {
            // Handle authentication error
