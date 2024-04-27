@@ -4,11 +4,11 @@ import Footer from "@/Components/Footer/Footer";
 
 
 
-export default function Product() {
+export default function Product({params}) {
     return (
       <>
         <NavbarShow />
-        <ProductPage/>
+        <ProductPage id={params.productPageSlug}/>
         <Footer/>
       </>
     );

@@ -10,22 +10,25 @@ const port = 5173;
 app.use(cors());
 app.use(bodyParser.json());
 
-const options = {
-  method: 'GET',
-  url: 'https://real-time-amazon-data.p.rapidapi.com/search',
-  params: {
-    // query: 'Crop Tops',
-    page: '1',
-    country: 'US',
-    category_id: 'aps'
-  },
-  headers: {
-    'X-RapidAPI-Key': 'cbd8d112d5msh4367eaa12000e49p1b629cjsn05a9e3ff3bb6',
-    'X-RapidAPI-Host': 'real-time-amazon-data.p.rapidapi.com'
-  }
-};
 
+ 
 app.get('/getData', async (req, res) => {
+
+  const options = {
+    method: 'GET',
+    url: 'https://real-time-amazon-data.p.rapidapi.com/search',
+    params: {
+      // query: 'Crop Tops',
+      page: '1',
+      country: 'US',
+      category_id: 'aps'
+    },
+    headers: {
+      'X-RapidAPI-Key': '76b612b893msha20a3cec30d9c3ap1541d7jsn7d85acc073d3',
+    'X-RapidAPI-Host': 'real-time-amazon-data.p.rapidapi.com'
+    }
+  };
+
   try {
     const query = req.query.query; // Extracting the search query from the request
     if (!query) {
@@ -36,6 +39,7 @@ app.get('/getData', async (req, res) => {
 
     const response = await axios.request(options);
     const products = response.data.data.products.map(x => ({
+      id:x.asin,
       title: x.product_title,
       photo: x.product_photo,
       price: x.product_price
@@ -46,6 +50,42 @@ app.get('/getData', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
+
+
+app.get('/getProduct', async (req, res) => {
+
+  const options = {
+    method: 'GET',
+    url: 'https://real-time-amazon-data.p.rapidapi.com/product-details',
+    params: {
+      // asin: 'B0CL6ZRN1L',
+      country: 'US'
+    },
+    headers: {
+      'X-RapidAPI-Key': '76b612b893msha20a3cec30d9c3ap1541d7jsn7d85acc073d3',
+      'X-RapidAPI-Host': 'real-time-amazon-data.p.rapidapi.com'
+    }
+  };
+
+  try {
+    // Assuming dynamicAsin is extracted from the request
+    const dynamicAsin = req.query.asin; // Assuming 'asin' is a query parameter
+  
+    if (!dynamicAsin) {
+      throw new Error('Id is required'); // Handle case when asin is not provided
+    }
+  
+    options.params.asin = dynamicAsin; // Set the 'asin' parameter dynamically
+  
+    const response = await axios.request(options);
+    console.log(response.data);
+    res.json(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+});
+
+
 
 
 app.post('/loginCheck', async (req, res) => {

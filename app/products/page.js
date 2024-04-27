@@ -55,7 +55,7 @@ export default function Page(){
              <button onClick={handleSearch}>Search</button>
             </div>
             <div className = "body">
-                {data.map(x=><Card img = {x.photo} des = {x.title} price ={x.price} rating = "5" key={x.title}/>)}
+                {data.map(x=><Card img = {x.photo} des = {x.title} price ={x.price} rating = "5" key={x.id} prod_id={x.id}/>)}
             </div>
         </>
     )
