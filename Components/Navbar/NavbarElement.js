@@ -1,10 +1,15 @@
 import "./NavbarElement.css"
 import Link from "next/link"
 import { useAuth } from "@/store/AuthContext"
+import { useRouter } from "next/navigation";
 export default function NavbarElement({Show}) {
+    const router = useRouter();
     const {isLoggedIn,login,logout} =useAuth();
     function handleLogout(){
         logout();
+    }
+    function profileClick(){
+        router.push("/profile")
     }
   return (
          <nav className={(Show)? " navbar navbar-expand-lg  fixed-top showNav":"navbar navbar-expand-lg  fixed-top" }  id="nav">
@@ -22,7 +27,7 @@ export default function NavbarElement({Show}) {
                             </svg>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Profile</a>
+                            <button class="dropdown-item" onClick={profileClick}>Profile</button>
                             <button class="dropdown-item" onClick={handleLogout}>Logout</button>
                         </div>
                     </div>

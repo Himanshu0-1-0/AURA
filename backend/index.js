@@ -86,6 +86,21 @@ app.get('/getProduct', async (req, res) => {
 });
 
 
+app.get('/getUserData', async (req, res) => {
+  const { userEmail } = req.query; // Extract email from query parameters
+  try {
+    // Check if the user exists in the database
+    const user = await model.findOne({ email: userEmail });
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    // If user exists, send the user data
+    res.status(200).json({ userData: user });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 
 
 app.post('/loginCheck', async (req, res) => {
