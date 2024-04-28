@@ -1,7 +1,32 @@
+'use client'
 import React from 'react'
 import "./ProductPage.css"
-
+import { useState } from 'react';
+import { useCart } from '@/store/CartContext';
 export default function ProductPageSt({productData}) {
+
+    const {  addToCart } = useCart();
+
+    const [itemCounter,setItemCounter]= useState(1);
+    function increaseCounter(){
+      const prev = itemCounter;
+      setItemCounter(prev+1);
+    }
+    function decreaseCounter(){
+      const prev=itemCounter;
+      if(prev>1){
+        setItemCounter(prev-1);
+      }
+    }
+    function cartHandle(){
+      const item = {
+        id: productData.asin,
+        name: productData.product_title,
+        price: productData.product_price,
+        quantity: itemCounter,
+      }
+      addToCart(item);
+    }
     return (
       <>
       <div id="products">
@@ -39,11 +64,11 @@ export default function ProductPageSt({productData}) {
             </div>
             <div className="qty">
               <div className="btns">
-                <button type="button" className="decreament">-</button>
-                <button type="input" className="qty_numbers">1</button>
-                <button type="button" className="increament">+</button>
+                <button type="button" className="decreament" onClick={decreaseCounter}>-</button>
+                <button type="input" className="qty_numbers">{itemCounter}</button>
+                <button type="button" className="increament" onClick={increaseCounter}>+</button>
               </div>
-              <button className="add_cart" type="button">
+              <button className="add_cart" type="button" onClick={cartHandle}>
                 <span
                   ><svg
                     width="22"
