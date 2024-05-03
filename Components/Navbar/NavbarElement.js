@@ -29,6 +29,7 @@ export default function NavbarElement({Show}) {
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <button class="dropdown-item" onClick={profileClick}>Profile</button>
                             <button class="dropdown-item" onClick={handleLogout}>Logout</button>
+                            <Link class="dropdown-item" href="/Cart">Cart</Link>
                         </div>
                     </div>
                 :<Link className={Show ?"nav-link text-nav " :"nav-link text-nav MakeBlue" } aria-current="page" href="/login?state=login">Login</Link>}
@@ -39,6 +40,7 @@ export default function NavbarElement({Show}) {
             <li className="nav-item">
                 <a className={Show ?"nav-link text-nav " :"nav-link text-nav MakeBlue" } href="#">Support</a>
             </li>
+            
             </ul>
         </div>
         </div>

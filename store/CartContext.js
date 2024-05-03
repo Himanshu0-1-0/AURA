@@ -32,12 +32,33 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeFromCart = (itemId) => {
-    setCart(cart.filter(item => item.id !== itemId));
-    localStorage.setItem('cart', JSON.stringify(cart));
+      const updatedCart = cart.filter(item => item.id !== itemId);
+      setCart(updatedCart); // Update the state first
+      localStorage.setItem('cart', JSON.stringify(updatedCart)); // Then update local storage
   };
 
+
+  const updateCart = (itemId, operation) => {
+    const updatedCart = [...cart];
+    const itemIndex = updatedCart.findIndex(item => item.id === itemId);
+    if (itemIndex !== -1) {
+      if (operation === '+1') {
+        updatedCart[itemIndex].quantity += 1;
+      } else if (operation === '-1') {
+        if (updatedCart[itemIndex].quantity > 1) {
+          updatedCart[itemIndex].quantity -= 1;
+        } else {
+          updatedCart.splice(itemIndex, 1); // Remove item if quantity becomes 0
+        }
+      }
+      setCart(updatedCart);
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+    }
+  };
+
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateCart }}>
       {children}
     </CartContext.Provider>
   );
@@ -47,7 +68,7 @@ export const useCart = () => useContext(CartContext);
 
 
 // to use
-// import { useCart } from '../contexts/CartContext';
+// import { useCart } from '+../contexts/CartContext';
 
 // function MyComponent() {
 //   const { cart, addToCart, removeFromCart } = useCart();
@@ -71,6 +92,7 @@ export const useCart = () => useContext(CartContext);
 //     name: 'Product Name',
 //     price: 19.99,
 //     quantity: 1,
+//      image: 
 //     // Any other relevant details about the product
 //   }
   

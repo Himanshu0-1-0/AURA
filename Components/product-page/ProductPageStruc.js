@@ -23,6 +23,7 @@ export default function ProductPageSt({productData}) {
         id: productData.asin,
         name: productData.product_title,
         price: productData.product_price,
+        image: productData.product_photo,
         quantity: itemCounter,
       }
       addToCart(item);
