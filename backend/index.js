@@ -1,9 +1,11 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
-const mongoose =require("mongoose");
+const Razorpay = require('razorpay');
 const bodyParser = require('body-parser');
 const model = require("./models/auth");
+require('dotenv').config();
+
 
 const app = express();
 const port = 5173;
@@ -11,6 +13,66 @@ app.use(cors());
 app.use(bodyParser.json());
 
 
+
+app.post('/order', async (req, res) => {
+  // setting up options for razorpay order.
+  const instance = new Razorpay({
+    key_id: process.env.KEY_ID,
+    key_secret: process.env.KEY_SECRET
+  });
+  
+  const options = {
+      amount: 500,
+      currency: "INR",
+      receipt: "RECEIPT",
+      payment_capture: 1
+  };
+  try {
+      const response = await instance.orders.create(options)
+      res.json({
+          order_id: response.id,
+          currency: response.currency,
+          amount: response.amount,
+      })
+  } catch (err) {
+     res.status(400).send('Not able to create order. Please try again!');
+  }
+});
+// app.post("/success", async (req, res) => {
+//   try {
+//       // getting the details back from our font-end
+//       const {
+//           orderCreationId,
+//           razorpayPaymentId,
+//           razorpayOrderId,
+//           razorpaySignature,
+//       } = req.body;
+
+//       // Creating our own digest
+//       // The format should be like this:
+//       // digest = hmac_sha256(orderCreationId + "|" + razorpayPaymentId, secret);
+//       const shasum = crypto.createHmac("sha256", "w2lBtgmeuDUfnJVp43UpcaiT");
+
+//       shasum.update(`${orderCreationId}|${razorpayPaymentId}`);
+
+//       const digest = shasum.digest("hex");
+
+//       // comaparing our digest with the actual signature
+//       if (digest !== razorpaySignature)
+//           return res.status(400).json({ msg: "Transaction not legit!" });
+
+//       res.json({
+//           msg: "success",
+//           orderId: razorpayOrderId,
+//           paymentId: razorpayPaymentId,
+//       });
+//   } catch (error) {
+//       res.status(500).send(error);
+//   }
+// });
+
+
+// verification part left visit: https://dev.to/soumyadey/integrate-razorpay-in-your-react-app-2nib
  
 app.get('/getData', async (req, res) => {
 

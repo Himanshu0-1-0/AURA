@@ -2,7 +2,7 @@
 import "./Cart.css"
 import { useState,useEffect } from "react";
 import { useCart } from '@/store/CartContext';
-export default function Cart() {
+export default function Cart({displayRazorpay}) {
     const { cart, removeFromCart,updateCart } = useCart();
     function handleRemove(id){
         removeFromCart(id);
@@ -35,6 +35,9 @@ export default function Cart() {
                         </div>
                     </div>
                 ))}
+            </div>
+            <div>
+            <button onClick={displayRazorpay}>Pay Here..</button>
             </div>
         </div>
     );
