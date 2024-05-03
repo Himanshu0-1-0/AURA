@@ -2,8 +2,6 @@
 import {useState,useEffect,useRef} from "react"
 import { useSearchParams } from 'next/navigation'
 import NavbarShow from "@/Components/product-page/NavbarShow.js";
-
-
 import Card from "@/Components/ProductCard/ProductCard.js"
 import "./styles.css"
 export default function Page(){
