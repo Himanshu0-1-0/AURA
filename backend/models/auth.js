@@ -6,7 +6,21 @@ const user = new mongoose.Schema({
     name: {type:String,required:true},
     email: {type:String,required:true,unique:true},
     contact: {type:Number,required:true},
-    password:{type:String,required:true}
+    password:{type:String,required:true},
+    orders: [
+        {
+            // orderCreationId: { type: String, required: true },
+            cart:[
+                {
+                    id: { type: String, required: true },
+                    image: { type: String, required: true },
+                    name: { type: String, required: true },
+                    price: { type: String, required: true },
+                    quantity: { type: Number, required: true },
+                }
+            ]
+        }
+    ]
 },{timestamps:true})
 
 const model = mongoose.model("users",user) /// datas-> collection in mongosh

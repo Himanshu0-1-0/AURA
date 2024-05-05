@@ -1,9 +1,12 @@
 'use client'
 import "./Cart.css"
-import { useState,useEffect } from "react";
 import { useCart } from '@/store/CartContext';
+import { useAuth } from "@/store/AuthContext";
+import { useRouter } from 'next/navigation'
 export default function Cart({displayRazorpay}) {
+    const router = useRouter();
     const { cart, removeFromCart,updateCart } = useCart();
+    const {email ,isLoggedIn}=useAuth();
     function handleRemove(id){
         removeFromCart(id);
     }
@@ -11,9 +14,15 @@ export default function Cart({displayRazorpay}) {
         updateCart(id,'-1')
     }
     function handleInc(id){
-        updateCart(id,'+1')
+        updateCart(id,'+1') 
     }
-
+    function handleClick(){
+        if(isLoggedIn){
+            displayRazorpay(email,cart);
+        }else{
+            router.push("/login?state=login")
+        }
+    }
     return (
         <div className="cart-container">
             <h1>Cart</h1>
@@ -37,7 +46,7 @@ export default function Cart({displayRazorpay}) {
                 ))}
             </div>
             <div>
-            <button onClick={displayRazorpay}>Pay Here..</button>
+            <button onClick={handleClick}>Pay Here..</button>
             </div>
         </div>
     );

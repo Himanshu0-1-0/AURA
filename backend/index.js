@@ -38,38 +38,34 @@ app.post('/order', async (req, res) => {
      res.status(400).send('Not able to create order. Please try again!');
   }
 });
-// app.post("/success", async (req, res) => {
-//   try {
-//       // getting the details back from our font-end
-//       const {
-//           orderCreationId,
-//           razorpayPaymentId,
-//           razorpayOrderId,
-//           razorpaySignature,
-//       } = req.body;
 
-//       // Creating our own digest
-//       // The format should be like this:
-//       // digest = hmac_sha256(orderCreationId + "|" + razorpayPaymentId, secret);
-//       const shasum = crypto.createHmac("sha256", "w2lBtgmeuDUfnJVp43UpcaiT");
+app.post("/success", async (req, res) => {
+  const {orderCreationId,email, cartdata } = req.body;
+  console.log(email);
+  try {
+    // Find the user by email
+    const user = await model.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
 
-//       shasum.update(`${orderCreationId}|${razorpayPaymentId}`);
+    // Create a new order object
+    const newOrder = {
+      cart: cartdata,
+    };
 
-//       const digest = shasum.digest("hex");
+    // Add the new order to the user's orders array
+    user.orders.push(newOrder);
 
-//       // comaparing our digest with the actual signature
-//       if (digest !== razorpaySignature)
-//           return res.status(400).json({ msg: "Transaction not legit!" });
+    // Save the updated user object
+    await user.save();
 
-//       res.json({
-//           msg: "success",
-//           orderId: razorpayOrderId,
-//           paymentId: razorpayPaymentId,
-//       });
-//   } catch (error) {
-//       res.status(500).send(error);
-//   }
-// });
+    return res.status(200).json({ message: "Order added successfully" });
+  } catch (error) {
+    console.error("Error adding order:", error);
+    return res.status(500).json({ error: "Internal server error" });
+  }
+});
 
 
 // verification part left visit: https://dev.to/soumyadey/integrate-razorpay-in-your-react-app-2nib

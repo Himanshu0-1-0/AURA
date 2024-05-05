@@ -25,6 +25,7 @@ export default function Profile() {
           <p>Name: {userData.name}</p>
           <p>Email: {userData.email}</p>
           <p>Contact: {userData.contact}</p>
+          <h3>Orders:</h3>
         </div>
       ) : (
         <p>Loading...</p>
