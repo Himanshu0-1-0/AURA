@@ -82,7 +82,7 @@ app.get('/getData', async (req, res) => {
       category_id: 'aps'
     },
     headers: {
-      'X-RapidAPI-Key': 'fe4b00a67bmsh584fd976b0e4f30p138380jsn992e08f27a7b',
+      'X-RapidAPI-Key': 'c04d02ca02mshb1977440a82361bp12d02bjsnd1b93ae9ff2e',
     'X-RapidAPI-Host': 'real-time-amazon-data.p.rapidapi.com'
     }
   };
@@ -120,7 +120,7 @@ app.get('/getProduct', async (req, res) => {
       country: 'US'
     },
     headers: {
-      'X-RapidAPI-Key': 'fe4b00a67bmsh584fd976b0e4f30p138380jsn992e08f27a7b',
+      'X-RapidAPI-Key': 'c04d02ca02mshb1977440a82361bp12d02bjsnd1b93ae9ff2e',
     'X-RapidAPI-Host': 'real-time-amazon-data.p.rapidapi.com'
     }
   };
