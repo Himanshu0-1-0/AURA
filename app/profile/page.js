@@ -26,6 +26,23 @@ export default function Profile() {
           <p>Email: {userData.email}</p>
           <p>Contact: {userData.contact}</p>
           <h3>Orders:</h3>
+          <ul>
+            {userData.orders.map(order => (
+              <li key={order._id}>
+                <h4>Order ID: {order._id}</h4>
+                <ul>
+                  {order.cart.map(item => (
+                    <li key={item._id}>
+                      <img src={item.image} alt={item.name} />
+                      <p>Name: {item.name}</p>
+                      <p>Price: {item.price}</p>
+                      <p>Quantity: {item.quantity}</p>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
         </div>
       ) : (
         <p>Loading...</p>
