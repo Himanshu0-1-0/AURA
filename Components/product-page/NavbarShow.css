@@ -19,7 +19,10 @@
 #home{
     margin-left: 3%;
 }
-
+.ABC{
+    display: flex;
+    align-items: center;
+}
 #nav{
     padding: 1% 0%;
     /* background-color:  rgba(185, 114, 66, 0.934); */

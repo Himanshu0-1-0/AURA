@@ -4,6 +4,7 @@ import { useSearchParams } from 'next/navigation'
 import { CartProvider } from "@/store/CartContext";
 import NavbarShow from "@/Components/product-page/NavbarShow.js";
 import Card from "@/Components/ProductCard/ProductCard.js"
+import { AuthProvider } from "@/store/AuthContext";
 import "./styles.css"
 export default function Page(){
     const searchParams = useSearchParams();
@@ -48,6 +49,7 @@ export default function Page(){
     //     .catch(error => console.error('Error:', error));
     // },[]) 
     return (
+        <AuthProvider>
         <CartProvider> 
         	<NavbarShow />
             <div className="search">
@@ -58,5 +60,7 @@ export default function Page(){
                 {data.map(x=><Card img = {x.photo} des = {x.title} price ={x.price} rating = "5" key={x.id} prod_id={x.id}/>)}
             </div>
         </CartProvider>
+        </AuthProvider>
     )
+
 }
